@@ -3,6 +3,9 @@ mkdir output
 cd buildroot-2022.02.9
 make defconfig BR2_DEFCONFIG=../buildroot-external/configs/idl4k/idl4k_defconfig O=../output
 cd ../output
+ln -sf linux.config.initramfs-none ../buildroot-external/board/idl4k/linux.config
+make
+ln -sf linux.config.initramfs-cpio ../buildroot-external/board/idl4k/linux.config
 make
 ```
 
